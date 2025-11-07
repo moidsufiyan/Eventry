@@ -1,121 +1,117 @@
-# Eventry - Event Management Platform
+# 🎉 Eventry - Full-Stack Event Management Platform
 
-A modern event management platform built with React, TypeScript, Vite, and TailwindCSS.
+A modern, full-stack event management platform built with React, TypeScript, Node.js, and MongoDB.
 
 ## 🚀 Tech Stack
 
+### Frontend
 - **React 18** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Fast build tool
 - **TailwindCSS** - Utility-first CSS
 - **Shadcn/ui** - Re-usable components
 - **React Router** - Client-side routing
-- **React Query** - Data fetching and caching
+- **React Query** - Data fetching
 - **Axios** - HTTP client
 - **Zustand** - State management
+
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - MongoDB ODM
+- **JWT** - Authentication
+- **bcrypt** - Password hashing
+- **CORS** - Cross-origin resource sharing
 
 ## 📁 Project Structure
 
 ```
 Eventry/
-├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── ui/          # Shadcn UI components
-│   │   ├── Navbar.tsx   # Navigation component
-│   │   └── ProtectedRoute.tsx  # Route protection
-│   ├── layouts/         # Layout components
-│   │   └── MainLayout.tsx
-│   ├── pages/           # Page components
-│   │   ├── Home.tsx
-│   │   ├── Login.tsx
-│   │   ├── Register.tsx
-│   │   └── Dashboard.tsx
-│   ├── store/           # Zustand stores
-│   │   └── authStore.ts
-│   ├── services/        # API services
-│   │   └── api.ts
-│   ├── hooks/           # Custom React hooks
-│   ├── lib/             # Utility functions
-│   │   └── utils.ts
-│   ├── App.tsx          # Main app component
-│   ├── main.tsx         # Entry point
-│   └── index.css        # Global styles
-├── public/              # Static assets
-├── index.html           # HTML template
-├── package.json         # Dependencies
-├── tsconfig.json        # TypeScript config
-├── tailwind.config.js   # Tailwind config
-└── vite.config.ts       # Vite config
+├── src/                    # Frontend React app
+│   ├── components/
+│   │   ├── ui/            # Shadcn UI components
+│   │   ├── Navbar.tsx
+│   │   └── ProtectedRoute.tsx
+│   ├── layouts/
+│   ├── pages/
+│   ├── store/
+│   ├── services/
+│   └── ...
+├── server/                 # Backend Node.js API
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   └── server.js
+├── public/
+└── package.json
 ```
 
-## 🛠️ Setup Instructions
+## 🛠️ Quick Start
 
-### 1. Install Dependencies
+### Prerequisites
+1. **Node.js** (v18+) - [Download here](https://nodejs.org/)
+2. **MongoDB** - Choose one:
+   - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Cloud - Recommended)
+   - [MongoDB Community](https://www.mongodb.com/try/download/community) (Local)
 
-First, you need to update the `package.json` with additional dependencies for Shadcn/ui:
+### Frontend Setup
 
 ```bash
+# Install dependencies
 npm install
-```
 
-Then install the required Shadcn/ui dependencies:
-
-```bash
-npm install @radix-ui/react-label @radix-ui/react-slot class-variance-authority clsx tailwind-merge tailwindcss-animate
-```
-
-### 2. Run the Development Server
-
-```bash
+# Start development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+Frontend runs on: **http://localhost:5173**
 
-### 3. Build for Production
-
-```bash
-npm run build
-```
-
-### 4. Preview Production Build
+### Backend Setup
 
 ```bash
-npm run preview
+# Navigate to server folder
+cd server
+
+# Install dependencies
+npm install
+
+# Configure environment variables
+# Edit server/.env with your MongoDB URI and JWT secret
+
+# Start server
+npm run dev
 ```
+
+Backend runs on: **http://localhost:5000**
+
+## 📚 Detailed Setup Guides
+
+### For Beginners (MUST READ!)
+If you're new to development, follow these guides:
+
+1. **Frontend Setup**: Read `PROJECT_SETUP.md`
+2. **Backend Setup**: Read `server/SETUP_GUIDE.md` ⭐ (Very detailed!)
+3. **API Documentation**: Read `server/README.md`
 
 ## 🎯 Features
 
-### Routing
-- **Public Routes**: Home, Login, Register
-- **Protected Routes**: Dashboard (requires authentication)
-- **Route Protection**: Automatic redirect to login for unauthenticated users
+### ✅ Implemented
+- User registration and login
+- JWT authentication
+- Protected routes
+- Password hashing
+- Responsive navbar
+- Landing page
+- Dashboard
 
-### Authentication
-- Login and Register pages with form validation
-- Auth state managed with Zustand
-- Persistent auth state (localStorage)
-- Protected route wrapper
-
-### UI Components
-- **Navbar**: Dynamic navigation based on auth state
-  - Public: Home | Events | Login | Register
-  - Authenticated: Home | Events | Dashboard | Logout
-- **Landing Page**: Hero section with "Explore Events" CTA
-- **Forms**: Styled with Shadcn components (Card, Input, Label, Button)
-
-### State Management
-- **Zustand Store** (`authStore`):
-  - User data
-  - Authentication token
-  - Login/Logout actions
-  - Persistent storage
-
-### API Setup
-- Axios client with interceptors
-- Automatic token injection
-- Global error handling
-- 401 redirect to login
+### 🔄 Coming Soon
+- Event creation
+- Event browsing
+- Ticket booking
+- User profiles
 
 ## 📝 Environment Variables
 
